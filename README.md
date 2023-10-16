@@ -152,6 +152,31 @@ Respuesta 200 de la petición:
 }
 ```
 
+3. Login
 
-![DER](https://github.com/yvahosc/transactionBankingSystem/assets/97228219/82321c89-d2ec-47c4-b4e5-bc32f77c318a)
+* El proyecto cuenta con autenticación y autorización utilizando usuario y contraseña y jwt respectivamente.
+
+Endpoint para login: permite a los ususarios acceder al sistema con su usuario (corresponde a su número de identificación) y una constraseña de cuatro dígitos creada al momento de crear la cuenta. Al ingresar correctamente se genera un Json web token con el que se identifica durante su estancia en el sistema. POST -> /api/login
+
+Cuerpo de la petición:
+```json
+{
+  "userName": "string",
+  "password": "string"
+}
+```
+
+Respuesta 200 de la petición:
+```json
+{
+  "jwtToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDIwNDc1NTg1IiwiaXNzIjoiTUFLQUlBIGJhbmsiLCJleHAiOjE2OTY3NzQwNzF9.9n78MwDEzekaVS_S40EHaMNd685aJ9PvAdAKzM5DUIw"
+}
+```
+
+Es posible acceder sin restricciones a los endpoints de /api/login, /api/accounts/{account_number}/deposit y /api/accounts para los demás endpoints es necesario haber pasado inicialmente por el endpoint /api/login para generar el JWT y poder validar si las acciones que se desea realizar están autorizadas (se debe ser el propietario de una cuenta para poder transferir desde ella, ver su información, crear bolsillos, etc.)
+
+4. Documentación con Open Api - Swagger y despliegue con railway
+
+El API se encuentra desplegado utilizando el servicio de railway.app ys posible visualizar dicha documentación accediendo a [/swagger-ui/index.html](https://proyectointegradormakaia-production.up.railway.app/swagger-ui/index.html)https://proyectointegradormakaia-production.up.railway.app/swagger-ui/index.html y desde allí es posible realizar pruebas a cada uno de los endpoint desarrollados.
+
 
