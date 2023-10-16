@@ -34,7 +34,7 @@
 
 1. Cuentas
 * Apertura de Cuentas
-### Endpoint para Abrir una Cuenta: permite a los usuarios abrir una nueva cuenta bancaria proporcionando su nombre y saldo inicial. POST -> /api/accounts
+Endpoint para Abrir una Cuenta: permite a los usuarios abrir una nueva cuenta bancaria proporcionando su nombre y saldo inicial. POST -> /api/accounts
 Cuerpo de la petición:
 ```json
 {
@@ -61,7 +61,7 @@ Respuesta 200 de la petición:
 ```
 
 * Depósitos en cuentas
-### Endpoint para Realizar un Depósito: permite a los usuarios realizar un depósito en una cuenta existente proporcionando el número de cuenta y la cantidad a depositar. POST -> /api/accounts/{account_number}/deposit
+Endpoint para Realizar un Depósito: permite a los usuarios realizar un depósito en una cuenta existente proporcionando el número de cuenta y la cantidad a depositar. POST -> /api/accounts/{account_number}/deposit
 Cuerpo de la petición:
 ```json
 {
@@ -78,7 +78,7 @@ Respuesta 200 de la petición:
 ```
 
 * Transferencias entre cuentas
-### Endpoint para Realizar una Transferencia: permite a los usuarios transferir dinero de una cuenta a otra, proporcionando los números de cuenta de origen y destino, así como la cantidad a transferir. POST -> /api/accounts/transfer
+Endpoint para Realizar una Transferencia: permite a los usuarios transferir dinero de una cuenta a otra, proporcionando los números de cuenta de origen y destino, así como la cantidad a transferir. POST -> /api/accounts/transfer
 Cuerpo y respuesta 200 de la petición:
 ```json
 {
@@ -89,7 +89,7 @@ Cuerpo y respuesta 200 de la petición:
 ```
 
 * Consultar cuenta
-### Endpoint para Consultar una Cuenta: permite a los usuarios consultar los detalles y el saldo actual de una cuenta específica en el sistema de transacciones bancarias. GET -> /api/accounts/{account_number}
+Endpoint para Consultar una Cuenta: permite a los usuarios consultar los detalles y el saldo actual de una cuenta específica en el sistema de transacciones bancarias. GET -> /api/accounts/{account_number}
 Respuesta 200 de la petición:
 ```json
 {
@@ -102,7 +102,7 @@ Respuesta 200 de la petición:
 2. Bolsillos
 
 * Creación de bolsillos
-### Endpoint para Crear un Bolsillo: permite a los usuarios crear un bolsillo (subcuenta) asociado a su cuenta principal. El dinero almacenado en el bolsillo se descuenta del saldo de la cuenta principal. POST -> /api/pockets
+Endpoint para Crear un Bolsillo: permite a los usuarios crear un bolsillo (subcuenta) asociado a su cuenta principal. El dinero almacenado en el bolsillo se descuenta del saldo de la cuenta principal. POST -> /api/pockets
 ```json
 {
   "accountNumber": 464783411264004,
@@ -112,7 +112,7 @@ Respuesta 200 de la petición:
 ```
 
 * Transferencias a bolsillos
-### Endpoint para Transferir Dinero al Bolsillo: permite a los usuarios transferir dinero desde la cuenta principal a un bolsillo existente, proporcionando el número de cuenta y bolsillo, así como la cantidad a transferir. POST -> /api/pockets/transfer
+Endpoint para Transferir Dinero al Bolsillo: permite a los usuarios transferir dinero desde la cuenta principal a un bolsillo existente, proporcionando el número de cuenta y bolsillo, así como la cantidad a transferir. POST -> /api/pockets/transfer
 ```json
 {
   "accountNumber": 464783411264004,
@@ -122,7 +122,7 @@ Respuesta 200 de la petición:
 ```
 
 * Consulta de bolsillos
-### Endpoint para Obtener Bolsillos de una Cuenta: permite a los usuarios obtener una lista de los bolsillos asociados a una cuenta específica. GET -> /api/accounts/{account_number}/pockets
+Endpoint para Obtener Bolsillos de una Cuenta: permite a los usuarios obtener una lista de los bolsillos asociados a una cuenta específica. GET -> /api/accounts/{account_number}/pockets
 Respuesta 200 de la petición:
 ```json
 {
