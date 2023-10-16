@@ -7,7 +7,7 @@ plugins {
 jar {
 	manifest {
 		attributes(
-				'Main-Class': 'Main-Class: org.springframework.boot.loader.JarLauncher'
+				'Main-Class': 'Main-Class: org.makaia.transactionBankingSystem.TransactionBankingSystemApplication'
 		)
 	}
 }
