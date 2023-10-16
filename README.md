@@ -177,6 +177,6 @@ Es posible acceder sin restricciones a los endpoints de /api/login, /api/account
 
 4. Documentación con Open Api - Swagger y despliegue con railway
 
-El API se encuentra desplegado utilizando el servicio de railway.app ys posible visualizar dicha documentación accediendo a [/swagger-ui/index.html](https://proyectointegradormakaia-production.up.railway.app/swagger-ui/index.html)https://proyectointegradormakaia-production.up.railway.app/swagger-ui/index.html y desde allí es posible realizar pruebas a cada uno de los endpoint desarrollados.
+El API se encuentra desplegado utilizando el servicio de railway.app ys posible visualizar dicha documentación accediendo a [Despliegue](https://proyectointegradormakaia-production.up.railway.app/swagger-ui/index.html)https://proyectointegradormakaia-production.up.railway.app/swagger-ui/index.html y desde allí es posible realizar pruebas a cada uno de los endpoint desarrollados.
 
 
