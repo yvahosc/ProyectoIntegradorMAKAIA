@@ -1,8 +1,8 @@
 # Sistema de transacciones bancarias
 ## Desarrollo del proyecto integrador dentro del desarrollo del BootCamp de desarrollo web BackEnd de MAKAIA.
 ### Equipo de trabajo:
-* Paula Múnera
-* Yeisson Vahos
+* Paula Múnera - paulamunera8@gmail.com
+* Yeisson Vahos - yvahosc@unal.edu.co
 
 ### El repositorio corresponde al desarrollo del proyecto integrador dentro del bootcamp de MAKAIA, en él se desarrollará la simulación de un sistema de transacciones bancaria utilizando Java, MySQL, SpringBoot, SpringData, Spring security, JWT, JUnit y Swagger.
 
@@ -177,6 +177,6 @@ Es posible acceder sin restricciones a los endpoints de /api/login, /api/account
 
 4. Documentación con Open Api - Swagger y despliegue con railway
 
-El API se encuentra desplegado utilizando el servicio de railway.app ys posible visualizar dicha documentación accediendo a [Despliegue](https://proyectointegradormakaia-production.up.railway.app/swagger-ui/index.html)https://proyectointegradormakaia-production.up.railway.app/swagger-ui/index.html y desde allí es posible realizar pruebas a cada uno de los endpoint desarrollados.
+El API se encuentra desplegado utilizando el servicio de railway.app ys posible visualizar dicha documentación accediendo a [Despliegue](https://proyectointegradormakaia-production.up.railway.app/swagger-ui/index.html) y desde allí es posible además realizar pruebas a cada uno de los endpoint desarrollados.
 
 
