@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.makaia.transactionBankingSystem.service.UserServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-10-16T06:09:11" hostname="LAPTOP-TEMIOI1K" time="0.233">
-  <properties/>
-  <testcase name="getUserByUserNameNonExistingUser()" classname="org.makaia.transactionBankingSystem.service.UserServiceTest" time="0.022"/>
-  <testcase name="getUserByUserNameExistingUser()" classname="org.makaia.transactionBankingSystem.service.UserServiceTest" time="0.004"/>
-  <testcase name="createUser()" classname="org.makaia.transactionBankingSystem.service.UserServiceTest" time="0.197"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
