@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/login")
 @Tag(name = "Controlador de autenticación del sistema.")
-@CrossOrigin(origins = {"http://localhost", "http://proyectointegradormakaia-production.up.railway.app/"})
+@CrossOrigin(origins = {"http://localhost", "http://proyectointegradormakaia-production.up.railway.app"})
 public class AuthenticationController {
 
     AuthenticationManager authenticationManager;
