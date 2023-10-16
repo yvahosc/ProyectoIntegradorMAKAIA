@@ -21,4 +21,4 @@ jobs:
       - name: run all test
         run: ./gradlew testClasses
       - name: create .jar and install
-        run: ./gradlew bootJar
+        run: ./gradlew jar

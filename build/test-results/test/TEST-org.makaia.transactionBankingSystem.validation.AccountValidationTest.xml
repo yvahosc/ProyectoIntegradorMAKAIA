@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.makaia.transactionBankingSystem.validation.AccountValidationTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2023-10-16T04:46:53" hostname="LAPTOP-TEMIOI1K" time="0.116">
+<testsuite name="org.makaia.transactionBankingSystem.validation.AccountValidationTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2023-10-16T06:09:11" hostname="LAPTOP-TEMIOI1K" time="0.065">
   <properties/>
-  <testcase name="transferAccountValidationWithErrors()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.006"/>
-  <testcase name="createAccountValidation()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.004"/>
-  <testcase name="createAccountValidationWithInvalidInitialBalance()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.002"/>
-  <testcase name="depositInAccountValidationWithInvalidNumberAccountAndNullAmount()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.005"/>
-  <testcase name="depositInAccountValidationWithInvalidAmount()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.012"/>
-  <testcase name="getAccountValidation()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.002"/>
-  <testcase name="depositAccountValidation()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.004"/>
-  <testcase name="createAccountValidationWithNullOwnerAndNullInitialBalance()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.005"/>
-  <testcase name="transferAccountValidation()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.004"/>
-  <testcase name="getAccountValidationWithInvalidNumberAccount()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.005"/>
+  <testcase name="transferAccountValidationWithErrors()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.012"/>
+  <testcase name="createAccountValidation()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.003"/>
+  <testcase name="createAccountValidationWithInvalidInitialBalance()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.001"/>
+  <testcase name="depositInAccountValidationWithInvalidNumberAccountAndNullAmount()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.002"/>
+  <testcase name="depositInAccountValidationWithInvalidAmount()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.005"/>
+  <testcase name="getAccountValidation()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.005"/>
+  <testcase name="depositAccountValidation()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.002"/>
+  <testcase name="createAccountValidationWithNullOwnerAndNullInitialBalance()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.012"/>
+  <testcase name="transferAccountValidation()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.002"/>
+  <testcase name="getAccountValidationWithInvalidNumberAccount()" classname="org.makaia.transactionBankingSystem.validation.AccountValidationTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

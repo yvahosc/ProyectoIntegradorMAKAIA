@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.makaia.transactionBankingSystem.service.OtrosTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2023-10-16T04:46:51" hostname="LAPTOP-TEMIOI1K" time="0.317">
+<testsuite name="org.makaia.transactionBankingSystem.service.OtrosTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2023-10-16T06:09:09" hostname="LAPTOP-TEMIOI1K" time="0.34">
   <properties/>
-  <testcase name="getPocketsByAccountNumber()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.014"/>
-  <testcase name="createSuccessfulAccountWithExistingPerson()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.021"/>
-  <testcase name="depositInAccountWithInvalidAmount()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.007"/>
-  <testcase name="transferToAccount()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.004"/>
-  <testcase name="balanceInPocketsOfOneAccount()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.006"/>
-  <testcase name="getAccountByIdWithNonExistentId()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.018"/>
-  <testcase name="createSuccessfulAccountWithNonExistingPerson()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.01"/>
-  <testcase name="depositInAccountWithNonExistingAccount()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.012"/>
-  <testcase name="depositInAccount()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.019"/>
-  <testcase name="getPersonById()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.002"/>
+  <testcase name="getPocketsByAccountNumber()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.012"/>
+  <testcase name="createSuccessfulAccountWithExistingPerson()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.006"/>
+  <testcase name="depositInAccountWithInvalidAmount()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.004"/>
+  <testcase name="transferToAccount()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.002"/>
+  <testcase name="balanceInPocketsOfOneAccount()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.001"/>
+  <testcase name="getAccountByIdWithNonExistentId()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.005"/>
+  <testcase name="createSuccessfulAccountWithNonExistingPerson()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.018"/>
+  <testcase name="depositInAccountWithNonExistingAccount()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.007"/>
+  <testcase name="depositInAccount()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.011"/>
+  <testcase name="getPersonById()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.001"/>
   <testcase name="getAccountByIdWithExistentId()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.004"/>
-  <testcase name="getAccountByIdWithInvalidId()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.003"/>
-  <testcase name="depositInAccountWithInvalidNumberAccountAndInvalidAmount()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.002"/>
-  <testcase name="createPerson()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.002"/>
-  <testcase name="isLoggedInUserTheOwnerOfTheAccount()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.007"/>
-  <testcase name="createAccountWithNullOwnerAndNullInitialBalance()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.024"/>
-  <testcase name="createAccountWithInvalidInformationOfOwner()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.009"/>
+  <testcase name="getAccountByIdWithInvalidId()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.029"/>
+  <testcase name="depositInAccountWithInvalidNumberAccountAndInvalidAmount()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.003"/>
+  <testcase name="createPerson()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.003"/>
+  <testcase name="isLoggedInUserTheOwnerOfTheAccount()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.002"/>
+  <testcase name="createAccountWithNullOwnerAndNullInitialBalance()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.004"/>
+  <testcase name="createAccountWithInvalidInformationOfOwner()" classname="org.makaia.transactionBankingSystem.service.OtrosTest" time="0.022"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
