@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.makaia.transactionBankingSystem.validation.PersonValidationTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-10-16T04:46:53" hostname="LAPTOP-TEMIOI1K" time="0.073">
+  <properties/>
+  <testcase name="testCreatePersonValidationWithErrors()" classname="org.makaia.transactionBankingSystem.validation.PersonValidationTest" time="0.003"/>
+  <testcase name="testGetPersonValidationWithError()" classname="org.makaia.transactionBankingSystem.validation.PersonValidationTest" time="0.004"/>
+  <testcase name="testUpdatePersonValidationWithError()" classname="org.makaia.transactionBankingSystem.validation.PersonValidationTest" time="0.004"/>
+  <testcase name="testUpdatePersonValidation()" classname="org.makaia.transactionBankingSystem.validation.PersonValidationTest" time="0.005"/>
+  <testcase name="testGetPersonValidation()" classname="org.makaia.transactionBankingSystem.validation.PersonValidationTest" time="0.04"/>
+  <testcase name="testCreatePersonValidation()" classname="org.makaia.transactionBankingSystem.validation.PersonValidationTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

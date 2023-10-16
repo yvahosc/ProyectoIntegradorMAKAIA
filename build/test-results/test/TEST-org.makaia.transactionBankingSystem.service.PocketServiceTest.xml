@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.makaia.transactionBankingSystem.service.PocketServiceTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2023-10-16T04:46:52" hostname="LAPTOP-TEMIOI1K" time="0.17">
+  <properties/>
+  <testcase name="getPocketsByAccountNumber()" classname="org.makaia.transactionBankingSystem.service.PocketServiceTest" time="0.043"/>
+  <testcase name="transferToPocketWithExistingAccountExistingPocketAndEnoughBalance()" classname="org.makaia.transactionBankingSystem.service.PocketServiceTest" time="0.012"/>
+  <testcase name="getAccountByIdWithNonExistingId()" classname="org.makaia.transactionBankingSystem.service.PocketServiceTest" time="0.006"/>
+  <testcase name="transferToPocketWithNonExistingAccount()" classname="org.makaia.transactionBankingSystem.service.PocketServiceTest" time="0.005"/>
+  <testcase name="createPocketWithExistingAccountAndEnoughBalance()" classname="org.makaia.transactionBankingSystem.service.PocketServiceTest" time="0.009"/>
+  <testcase name="createPocketWithNonExistingAccount()" classname="org.makaia.transactionBankingSystem.service.PocketServiceTest" time="0.035"/>
+  <testcase name="transferToPocketWithExistingAccountAndNonExistingPocket()" classname="org.makaia.transactionBankingSystem.service.PocketServiceTest" time="0.011"/>
+  <testcase name="transferToPocketWithExistingAccountExistingPocketAndNonEnoughBalance()" classname="org.makaia.transactionBankingSystem.service.PocketServiceTest" time="0.006"/>
+  <testcase name="createPocketWithExistingAccountAndNonEnoughBalance()" classname="org.makaia.transactionBankingSystem.service.PocketServiceTest" time="0.009"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
