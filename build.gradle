@@ -25,7 +25,8 @@ dependencies {
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	implementation 'com.auth0:java-jwt:4.3.0'
 	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.7.0'
-	implementation group: 'org.springframework.boot', name: 'spring-boot-maven-plugin', version: '3.1.4'
+	implementation group: 'org.springframework.boot', name:
+			'spring-boot-maven-plugin', version: '2.4.13'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 }
