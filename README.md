@@ -175,8 +175,20 @@ Respuesta 200 de la petición:
 
 Es posible acceder sin restricciones a los endpoints de /api/login, /api/accounts/{account_number}/deposit y /api/accounts para los demás endpoints es necesario haber pasado inicialmente por el endpoint /api/login para generar el JWT y poder validar si las acciones que se desea realizar están autorizadas (se debe ser el propietario de una cuenta para poder transferir desde ella, ver su información, crear bolsillos, etc.)
 
+
 4. Documentación con Open Api - Swagger y despliegue con railway
 
 El API se encuentra desplegado utilizando el servicio de railway.app ys posible visualizar dicha documentación accediendo a [Despliegue](https://proyectointegradormakaia-production.up.railway.app/swagger-ui/index.html) y desde allí es posible además realizar pruebas a cada uno de los endpoint desarrollados.
 
+5. Entidades
 
+El sistema cuenta con las siguientes entidades para la persistencia de datos:
+
+- Persona: para registrar la información de las personas propietarias de las cuentas bancarias y los bolsillos.
+- Cuenta: para registrar la información correpondiente a las cuentas bancarias y sus propietarios
+- Bolsillo: para registrar la información correpondiente a los bolsillos y sus cuentas bancarias asociadas
+- Usuario: para registrar la información correspondiente a los usuarios y contraseñas para la autenticación de los usuarios en el sistema.
+
+Estas entidades se relacionan mediante el siguiente diagrama entidad relación:
+
+![Diagrama ER](https://github.com/yvahosc/ProyectoIntegradorMAKAIA/assets/97228219/436e8608-b84d-42f8-b38b-6fb0d533b0a9)
