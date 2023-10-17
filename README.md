@@ -192,3 +192,9 @@ El sistema cuenta con las siguientes entidades para la persistencia de datos:
 Estas entidades se relacionan mediante el siguiente diagrama entidad relación:
 
 ![Diagrama ER](https://github.com/yvahosc/ProyectoIntegradorMAKAIA/assets/97228219/436e8608-b84d-42f8-b38b-6fb0d533b0a9)
+
+6. Diagrama
+
+El sistema se construyó utilizando la arquitectura por capas y el siguiente diagrama nos muestra como se relacionan cada una de las clases creadas:
+
+![transactionBankingSystem2](https://github.com/yvahosc/ProyectoIntegradorMAKAIA/assets/97228219/7a894859-9aae-4b64-b131-330d2e7da6b8)
