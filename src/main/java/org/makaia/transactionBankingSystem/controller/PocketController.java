@@ -34,7 +34,9 @@ public class PocketController {
 
     @Operation(hidden = true)
     @GetMapping("/{accountNumber}")
-    public ResponseEntity<DTOPocketConsultOut> getPockets (HttpServletRequest request, @PathVariable Long accountNumber) throws ApiException {
+    public ResponseEntity<DTOPocketConsultOut> getPockets (HttpServletRequest request,
+                       @PathVariable Long accountNumber) throws ApiException
+    {
         this.accountService.isLoggedInUserTheOwnerOfTheAccount(accountNumber,
                 request.getUserPrincipal().getName());
         return ResponseEntity.ok(this.pocketService.getPocketsByAccountNumber(accountNumber));
@@ -42,24 +44,27 @@ public class PocketController {
 
     @Operation(summary = "Permite a los usuarios crear un bolsillo " +
             "(subcuenta) asociado a su cuenta principal. El dinero almacenado" +
-            " en el bolsillo no se encuentra disponible en la cuenta " +
+            " en el bolsillo no se encontrará disponible en la cuenta " +
             "principal.",
+
             responses = {
-                    @ApiResponse(responseCode = "200", description = "Se creó" +
-                            " bolsillo con la información ingresada.",
+                    @ApiResponse(responseCode = "200", description =
+                            "Bolsillo creado exitosamente con la información " +
+                                    "ingresada.",
                             content = @Content(schema =
                             @Schema(implementation = DTOPocketCreation.class))),
-                    @ApiResponse(responseCode = "400", description = "Error en el ingreso de " +
-                            "los datos ya sea para número de cuenta asociada," +
-                            " nombre o su saldo inicial, o el saldo " +
-                            "disponible en la cuenta no es suficiente.",
+                    @ApiResponse(responseCode = "400", description =
+                            "Posibles errores:\n- Error en el ingreso de " +
+                            "los datos.\n- El saldo disponible en la cuenta" +
+                                    " no es suficiente.",
                             content = @Content(schema =@Schema(hidden = true))),
-                    @ApiResponse(responseCode = "403", description = "Acceso " +
-                            "no autorizado debido a que el token es inválido " +
-                            "o caducó o debido a que el usuario no puede " +
-                            "realizar la acción (la cuenta de origen no es de" +
-                            " su propiedad).", content =
-                    @Content(schema =@Schema(hidden = true)))
+                    @ApiResponse(responseCode = "403", description =
+                            "Posibles errores:\n- Acceso no autorizado " +
+                                    "debido a que el token es inválido o caducó" +
+                                    ".\n- Acceso no autorizado debido a que " +
+                                    "el usuario no tiene autorización para " +
+                                    "realizar la acción.", content =
+                            @Content(schema =@Schema(hidden = true)))
 
             }
     )
@@ -71,9 +76,8 @@ public class PocketController {
                   dtoPocketCreation)
             throws ApiException
     {
-        this.accountService.isLoggedInUserTheOwnerOfTheAccount(dtoPocketCreation.getAccountNumber(),
-                request.getUserPrincipal().getName());
-        System.out.println(dtoPocketCreation.getAccountNumber());
+        this.accountService.isLoggedInUserTheOwnerOfTheAccount(dtoPocketCreation
+                    .getAccountNumber(),request.getUserPrincipal().getName());
         return ResponseEntity.ok(this.pocketService.createPocket(dtoPocketCreation));
     }
 
@@ -85,21 +89,25 @@ public class PocketController {
                     "del bolsillo y el monto a transferir y se retorna la " +
                     "información de la transferencia realizada.",
             responses = {
-                    @ApiResponse(responseCode = "200", description = "Se " +
-                            "realizó la transacción." +
-                            ".", content = @Content(schema =
+                    @ApiResponse(responseCode = "200", description =
+                            "Transferencia realizada exitosamente con la " +
+                                    "información ingresada.", content =
+                    @Content(schema =
                             @Schema(implementation = DTOPocketTransfer.class))),
-                    @ApiResponse(responseCode = "400", description = "Error " +
-                            "en el ingreso de los datos o no existe cuenta o " +
-                            "bolsillo asociados a la información enviada por" +
-                            " el cuerpo de la petición el saldo disponible de la " +
-                            "cuenta de origen no es suficiente.", content =
+                    @ApiResponse(responseCode = "400", description =
+                            "Posibles errores:\n- Error en el ingreso de los " +
+                                    "datos.\n- No existe cuenta o bolsillo " +
+                                    "asociados a la información enviada por " +
+                                    "el cuerpo de la petición. \n- El saldo " +
+                                    "disponible de la cuenta de origen no es " +
+                                    "suficiente.", content =
                             @Content(schema =@Schema(hidden = true))),
-                    @ApiResponse(responseCode = "403", description = "Acceso " +
-                            "no autorizado debido a que el token es inválido " +
-                            "o caducó o debido a que el usuario no puede " +
-                            "realizar la acción (la cuenta de origen no es de" +
-                            " su propiedad).", content =
+                    @ApiResponse(responseCode = "403", description =
+                            "Posibles errores:\n- Acceso no autorizado debido" +
+                                    " a que el token es inválido o caducó" +
+                                    ".\n- Acceso no autorizado debido a que " +
+                                    "el usuario no tiene autorización para " +
+                                    "realizar la acción.", content =
                     @Content(schema =@Schema(hidden = true)))
             }
     )

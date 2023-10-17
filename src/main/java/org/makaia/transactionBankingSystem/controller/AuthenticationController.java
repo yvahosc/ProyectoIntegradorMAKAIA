@@ -41,16 +41,15 @@ public class AuthenticationController {
                     "la petición y retorna la información asociada a este " +
                     "usuario en la base de datos en un JWT.",
             responses = {
-                    @ApiResponse(responseCode = "200", description = "Se " +
-                            "encontró usuario asociado a la información " +
-                            "suministrada." +
-                            ".", content = @Content(schema =
+                    @ApiResponse(responseCode = "200", description = "Usuario" +
+                            " autenticado exitosamente con la información " +
+                            "suministrada.", content = @Content(schema =
                             @Schema(implementation = DTOToken.class))),
-                    @ApiResponse(responseCode = "403", description = "Error " +
-                            "en el ingreso de los datos o no existe una " +
-                            "un usuario asociado al nombre de usuario pasado " +
-                            "por parámetro.", content =
-                            @Content(schema =@Schema(hidden = true))),
+                    @ApiResponse(responseCode = "403", description =
+                            "Posibles errores:\n- Error en el ingreso de los " +
+                                    "datos.\n- No existe un usuario asociado " +
+                                    "a los datos pasados por parámetro.",
+                            content = @Content(schema =@Schema(hidden = true))),
                     @ApiResponse(responseCode = "500", description = "Error " +
                             "al intentar crear el JWT.", content =
                     @Content(schema =@Schema(hidden = true)))

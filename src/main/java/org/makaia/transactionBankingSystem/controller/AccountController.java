@@ -32,23 +32,27 @@ public class AccountController {
         this.accountService = accountService;
     }
 
-    @Operation(summary = "permite a los usuarios consultar los detalles y el " +
+    @Operation(summary = "Permite a los usuarios consultar los detalles y el " +
             "saldo actual de una cuenta específica en el sistema de " +
             "transacciones bancarias.",
             description = "Recibe un número de cuenta por la url y se retorna" +
                     " la información de la cuenta asociada a este.",
             responses = {
-                    @ApiResponse(responseCode = "200", description = "Se encontró cuenta " +
-                            "bancaria asociada al número de cuenta ingresado" +
-                            ".", content = @Content(schema =
+                    @ApiResponse(responseCode = "200", description =
+                            "Cuenta bancaria asociada al número de cuenta  " +
+                                    "ingresado hallada exitosamente.",
+                            content = @Content(schema =
                             @Schema(implementation = Account.class))),
-                    @ApiResponse(responseCode = "400", description = "Error en el ingreso de " +
-                            "los datos o no existe una cuenta asociada al " +
+                    @ApiResponse(responseCode = "400", description =
+                            "Posibles errores:\n- Error en el ingreso de " +
+                            "los datos.\n- No existe una cuenta asociada al " +
                             "número de cuenta pasado por parámetro.", content =
                             @Content(schema =@Schema(hidden = true))),
-                    @ApiResponse(responseCode = "403", description = "Acceso " +
-                            "no autorizado", content =
-                            @Content(schema =@Schema(hidden = true)))
+                    @ApiResponse(responseCode = "403", description =
+                            "Posibles errores:\n- Error en el ingreso de los " +
+                                    "datos.\n- No existe un usuario asociado " +
+                                    "a los datos pasados por parámetro.",
+                            content = @Content(schema =@Schema(hidden = true)))
             }
     )
     @Parameter(name = "id",description = "Número de cuenta de 15 dígitos.")
@@ -61,26 +65,27 @@ public class AccountController {
     }
 
     @Operation(summary = "Permite a los usuarios abrir una nueva cuenta bancaria" +
-            "proporcionando su nombre y saldo inicial.",
+            " proporcionando su información y el saldo inicial.",
             description = "Recibe la información del propietario y su saldo " +
                     "inicial por el cuerpo de la petición y se " +
                     "retorna la información de la cuenta creada.",
             responses = {
-                    @ApiResponse(responseCode = "200", description = "Se creó" +
-                            " cuenta bancaria con la información ingresada.",
+                    @ApiResponse(responseCode = "200", description = "Cuenta " +
+                            "bancaria creada exitosamente con la información " +
+                            "suministrada.",
                             content = @Content(schema =
                             @Schema(implementation = Account.class))),
-                    @ApiResponse(responseCode = "400", description = "Error en el ingreso de " +
-                            "los datos ya sea para propietario de la cuenta o" +
-                            " para su saldo inicial.",
+                    @ApiResponse(responseCode = "400", description = "Error " +
+                            "en el ingreso de los datos.",
                             content = @Content(schema =@Schema(hidden = true))),
-
             }
     )
     @PostMapping
-    public ResponseEntity<Account> createAccount(@Parameter(description = "Información del " +
-            "propietario y saldo inicial de la cuenta bancaria a crear.",
-            required = true) @RequestBody DTOAccountCreation dtoAccountCreation) throws ApiException
+    public ResponseEntity<Account> createAccount(@Parameter(description =
+            "Información del propietario y saldo inicial de la cuenta " +
+                    "bancaria a crear.",
+            required = true) @RequestBody DTOAccountCreation dtoAccountCreation)
+            throws ApiException
     {
         return ResponseEntity.ok(this.accountService.createAccount(dtoAccountCreation));
     }
@@ -93,14 +98,24 @@ public class AccountController {
                     " y se retorna la información de la cuenta asociada a " +
                     "después de hacer el depósito.",
             responses = {
-                    @ApiResponse(responseCode = "200", description = "Se " +
-                            "realizó el depósito a la cuenta bancaria.",
+                    @ApiResponse(responseCode = "200", description =
+                            "Depósito a cuenta bancaria realizado " +
+                                    "exitosamente con la información " +
+                                    "suministrada.",
                             content = @Content(schema =
-                    @Schema(implementation = Account.class))),
-                    @ApiResponse(responseCode = "400", description = "Error en el ingreso de " +
-                            "los datos o no existe una cuenta asociada al " +
+                            @Schema(implementation = Account.class))),
+                    @ApiResponse(responseCode = "400", description =
+                            "Posibles errores:\n- Error en el ingreso de " +
+                            "los datos.\n- No existe una cuenta asociada al " +
                             "número de cuenta pasado por parámetro.", content =
-                    @Content(schema =@Schema(hidden = true))),
+                            @Content(schema =@Schema(hidden = true))),
+                    @ApiResponse(responseCode = "403", description =
+                            "Posibles errores:\n- Acceso no autorizado debido" +
+                                    " a que el token es inválido o caducó" +
+                                    ".\n- Acceso no autorizado debido a que " +
+                                    "el usuario no tiene autorización para " +
+                                    "realizar la acción.", content =
+                            @Content(schema =@Schema(hidden = true)))
             }
     )
     @Parameter(name = "account_number",description = "Número de cuenta de 15 dígitos.")
@@ -121,22 +136,26 @@ public class AccountController {
                     "con el monto de esta y se retorna la información de la " +
                     "transferencia realizada.",
             responses = {
-                    @ApiResponse(responseCode = "200", description = "Se " +
-                            "realizó la transacción." +
-                            ".", content = @Content(schema =
-                    @Schema(implementation = DTOAccountTransfer.class))),
-                    @ApiResponse(responseCode = "400", description = "Error en el ingreso de " +
-                            "los datos o no existe(n) cuenta(s) asociada al" +
+                    @ApiResponse(responseCode = "200", description =
+                            "Transferencia realizada exitosamente con la " +
+                                    "información suministrada.", content =
+                            @Content(schema = @Schema(implementation =
+                                    DTOAccountTransfer.class))),
+                    @ApiResponse(responseCode = "400", description =
+                            "Posibles errores:\n- Error en el ingreso de " +
+                            "los datos.\n- No existe(n) cuenta(s) asociada al" +
                             "(los) número(s) de cuenta pasado(s) por el " +
-                            "cuerpo de la petición, o las cuentas son la " +
-                            "misma o el saldo disponible de la cuenta de " +
-                            "origen no es suficiente.", content =
+                            "cuerpo de la petición.\n- Las cuentas de origen " +
+                                    "y destino de la transferencia son " +
+                                    "iguales.\n- El saldo disponible de la " +
+                                    "cuenta de origen no es suficiente.", content =
                             @Content(schema =@Schema(hidden = true))),
-                    @ApiResponse(responseCode = "403", description = "Acceso " +
-                            "no autorizado debido a que el token es inválido " +
-                            "o caducó o debido a que el usuario no puede " +
-                            "realizar la acción (la cuenta de origen no es de" +
-                            " su propiedad).", content =
+                    @ApiResponse(responseCode = "403", description =
+                            "Posibles errores:\n- Acceso no autorizado debido" +
+                                    " a que el token es inválido o caducó" +
+                                    ".\n- Acceso no autorizado debido a que " +
+                                    "el usuario no tiene autorización para " +
+                                    "realizar la acción.", content =
                             @Content(schema =@Schema(hidden = true)))
             }
     )
@@ -159,23 +178,25 @@ public class AccountController {
                     "petición y se retorna una lista de bolsillos " +
                     "pertenecientes a la cuenta asociada.",
             responses = {
-                    @ApiResponse(responseCode = "200", description = "Se " +
-                            "realizó la obtención de una lista de bolsillos " +
-                            "asociados a la cuenta pasada por parámetro.",
+                    @ApiResponse(responseCode = "200", description = "Obtenci" +
+                            "ón exitosa de la lista de bolsillos asociados a" +
+                            " la cuenta pasada por parámetro.",
                             content = @Content(schema =
                         @Schema(implementation = DTOPocketConsultOut.class))),
-                    @ApiResponse(responseCode = "400", description = "Error " +
-                            "en el ingreso de los datos, o no existe una " +
+                    @ApiResponse(responseCode = "400", description =
+                            "Posibles errores:\n- Error " +
+                            "en el ingreso de los datos.\n- No existe una " +
                             "cuenta asociada al número de cuenta pasado por " +
-                            "parámetro, o la cuenta bancaria no cuenta con " +
+                            "parámetro.\n- La cuenta bancaria no cuenta con " +
                             "bolsillos.", content =
                             @Content(schema =@Schema(hidden = true))),
-                    @ApiResponse(responseCode = "403", description = "Acceso " +
-                            "no autorizado debido a que el token es inválido " +
-                            "o caducó o debido a que el usuario no puede " +
-                            "realizar la acción (la cuenta bancaria no es de" +
-                            " su propiedad).", content =
-                    @Content(schema =@Schema(hidden = true)))
+                    @ApiResponse(responseCode = "403", description =
+                            "Posibles errores:\n- Acceso no autorizado debido" +
+                                    " a que el token es inválido o caducó" +
+                                    ".\n- Acceso no autorizado debido a que " +
+                                    "el usuario no tiene autorización para " +
+                                    "realizar la acción.", content =
+                            @Content(schema =@Schema(hidden = true)))
             }
     )
     @Parameter(name = "accountNumber",description = "Número de cuenta de 15 dígitos.")
