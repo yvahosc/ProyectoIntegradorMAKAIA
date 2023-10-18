@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "1314da5b-3a7e-4d8c-8d2b-11a60dbdedea",
+		"name": "Deployment transaction banking system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16910958"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Get account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDIwNDc1ODUiLCJpc3MiOiJNQUtBSUEgYmFuayIsImV4cCI6MTY5NzYxNTcxNH0.hhHgWBDyS7qQ0knvzxoX0e9yjwrG8ui_xKgjRf3clec",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://proyectointegradormakaia-production.up.railway.app/api/accounts/996299984137185",
+							"protocol": "https",
+							"host": [
+								"proyectointegradormakaia-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"996299984137185"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"initialBalance\": 0,\r\n    \"owner\":{\r\n        \"person\":{\r\n            \"id\": \"123456789\",\r\n            \"firstName\": \"Luisa\",\r\n            \"lastName\": \"Perea\",\r\n            \"email\": \"lperea@gmail.com\",\r\n            \"phone\": \"+57-3046006015\"\r\n        },\r\n        \"password\": \"1234\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectointegradormakaia-production.up.railway.app/api/accounts",
+							"protocol": "https",
+							"host": [
+								"proyectointegradormakaia-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deposit in account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDIwNDc1ODUiLCJpc3MiOiJNQUtBSUEgYmFuayIsImV4cCI6MTY5NzYxNTcxNH0.hhHgWBDyS7qQ0knvzxoX0e9yjwrG8ui_xKgjRf3clec",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 10000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectointegradormakaia-production.up.railway.app/api/accounts/996299984137185",
+							"protocol": "https",
+							"host": [
+								"proyectointegradormakaia-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"996299984137185"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer between accounts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDIwNDc1ODUiLCJpc3MiOiJNQUtBSUEgYmFuayIsImV4cCI6MTY5NzYxNTcxNH0.hhHgWBDyS7qQ0knvzxoX0e9yjwrG8ui_xKgjRf3clec",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceAccountNumber\": 996299984137185,\r\n    \"destinationAccountNumber\": 109297776864046,\r\n    \"amount\": 2000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectointegradormakaia-production.up.railway.app/api/accounts/transfer",
+							"protocol": "https",
+							"host": [
+								"proyectointegradormakaia-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pocket",
+			"item": [
+				{
+					"name": "Get pockets",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDIwNDc1ODUiLCJpc3MiOiJNQUtBSUEgYmFuayIsImV4cCI6MTY5NzYxNTcxNH0.hhHgWBDyS7qQ0knvzxoX0e9yjwrG8ui_xKgjRf3clec",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://proyectointegradormakaia-production.up.railway.app/api/accounts/996299984137185/pockets",
+							"protocol": "https",
+							"host": [
+								"proyectointegradormakaia-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"996299984137185",
+								"pockets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create pocket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDIwNDc1ODUiLCJpc3MiOiJNQUtBSUEgYmFuayIsImV4cCI6MTY5NzYxNTcxNH0.hhHgWBDyS7qQ0knvzxoX0e9yjwrG8ui_xKgjRf3clec",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountNumber\": 996299984137185,\r\n    \"name\": \"Vacaciones\",\r\n    \"initialBalance\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectointegradormakaia-production.up.railway.app/api/pockets",
+							"protocol": "https",
+							"host": [
+								"proyectointegradormakaia-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"pockets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer to pocket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDIwNDc1ODUiLCJpc3MiOiJNQUtBSUEgYmFuayIsImV4cCI6MTY5NzYxNTcxNH0.hhHgWBDyS7qQ0knvzxoX0e9yjwrG8ui_xKgjRf3clec",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountNumber\": 996299984137185,\r\n    \"pocketNumber\": 2,\r\n    \"amount\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectointegradormakaia-production.up.railway.app/api/pockets/transfer",
+							"protocol": "https",
+							"host": [
+								"proyectointegradormakaia-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"pockets",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Token generation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"102047585\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://proyectointegradormakaia-production.up.railway.app/api/login",
+					"protocol": "https",
+					"host": [
+						"proyectointegradormakaia-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
