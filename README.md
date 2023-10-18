@@ -161,8 +161,8 @@ Endpoint para login: permite a los ususarios acceder al sistema con su usuario (
 Cuerpo de la petición:
 ```json
 {
-  "userName": "string",
-  "password": "string"
+  "userName": "102047585",
+  "password": "1234"
 }
 ```
 
@@ -178,7 +178,7 @@ Es posible acceder sin restricciones a los endpoints de /api/login y /api/accoun
 
 4. Documentación con Open Api - Swagger y despliegue con railway
 
-El API se encuentra desplegado utilizando el servicio de railway.app y es posible visualizar su documentación accediendo a [documentación](https://proyectointegradormakaia-production.up.railway.app/swagger-ui/index.html), por ahora el proyecto sigue ejecutandose de manera local conectado a una base de datos en la nube.
+El API se encuentra desplegado utilizando el servicio de railway.app y es posible visualizar su documentación accediendo a [documentación](https://proyectointegradormakaia-production.up.railway.app/swagger-ui/index.html), el proyecto puede probarse utilizando postman, la url del despliegue y los endpoints mencionados anteriormente importando en postman el archivo .json llamado (Deployment transaction banking system.postman_collection.json) ubicado en la raiz del proyecto.
 
 5. Entidades
 
